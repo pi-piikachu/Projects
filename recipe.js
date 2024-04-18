@@ -1,10 +1,8 @@
 const searchinp = document.querySelector('#searchinp');
 
-
-
-
 const searchbtn = document.querySelector('#src-btn');
 const recipecont = document.querySelector(`.recipecontainer`);
+const recipedetail = document.querySelector(`.recipedetail`);
 
 const fetchrecipe = async (query) => {
     recipecont.innerHTML="";
@@ -17,22 +15,60 @@ const fetchrecipe = async (query) => {
         recipediv.classList.add('recipe');
         console.log(element);
          recipediv.innerHTML = `<img src = "${element.strMealThumb}">
-         <h3>${element.strMeal} </h3>\n
-                              
-         `;
-         
+         <h3>${element.strMeal}</h3>\n
+         <p>${element.strArea}</p>
+         <p>${element.strCategory}</p>`;
+
+         const recipebtn = document.createElement('button');
+         recipebtn.classList.add('recipebtn');
+         recipebtn.innerHTML =`View Recipe`;
+         recipediv.appendChild(recipebtn);
+         recipebtn.addEventListener('click', (e) => {
+            e.preventDefault;
+            recipedetail.style.display = "block";
+            console.log("hello");
+           
+        })
          recipecont.appendChild(recipediv);
         
     
     });
     
 }
+
+/*const recipedetails = async (query) => {
+    recipecont.innerHTML="";
+    let response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`);
+  //  console.log(response);
+    let data = await response.json();
+    //console.log(data);
+    data.meals.forEach(element => {
+        let recipediv = document.createElement('div');
+        recipediv.classList.add('recipe');
+        console.log(element);
+         recipediv.innerHTML = `<img src = "${element.strMealThumb}">
+         <h3>${element.strMeal}</h3>\n
+         <p>${element.strArea}</p>
+         <p>${element.strCategory}</p>`;
+
+         const recipebtn = document.createElement('button');
+         recipebtn.classList.add('recipebtn');
+         recipebtn.innerHTML =`View Recipe`;
+         recipediv.appendChild(recipebtn);
+        
+         recipecont.appendChild(recipediv);
+        
+    
+    });*/
 searchbtn.addEventListener('click', (e) => {
     e.preventDefault;
     const recipeinp = searchinp.value.trim();
     console.log("hello");
+    
    return fetchrecipe(recipeinp);
 })
+
+
 // api ninja api
 /*const url = `https://www.api.api-ninjas.com/v1/recipe?query=` ;
 const options = {
