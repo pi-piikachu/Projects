@@ -3,37 +3,73 @@ const searchinp = document.querySelector('#searchinp');
 const searchbtn = document.querySelector('#src-btn');
 const recipecont = document.querySelector(`.recipecontainer`);
 const recipedetail = document.querySelector(`.recipedetail`);
+const recipepopup = document.querySelector(`.recipepopup`);
+const recipeclosebtn = document.querySelector('.recipeclosebtn');
+
 
 const fetchrecipe = async (query) => {
     recipecont.innerHTML="";
     let response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`);
   //  console.log(response);
     let data = await response.json();
-    //console.log(data);
-    data.meals.forEach(element => {
+    console.log(data);
+    data.meals.forEach(meal => {
         let recipediv = document.createElement('div');
         recipediv.classList.add('recipe');
-        console.log(element);
-         recipediv.innerHTML = `<img src = "${element.strMealThumb}">
-         <h3>${element.strMeal}</h3>\n
-         <p>${element.strArea}</p>
-         <p>${element.strCategory}</p>`;
+        console.log(meal);
+         recipediv.innerHTML = `<img src = "${meal.strMealThumb}">
+         <h3>${meal.strMeal}</h3>\n
+         <p>${meal.strArea}</p>
+         <p>${meal.strCategory}</p>`;
 
          const recipebtn = document.createElement('button');
          recipebtn.classList.add('recipebtn');
          recipebtn.innerHTML =`View Recipe`;
          recipediv.appendChild(recipebtn);
+
+        
+
+
          recipebtn.addEventListener('click', (e) => {
             e.preventDefault;
-            recipedetail.style.display = "block";
-            console.log("hello");
-           
+            recipepopup.style.display = "flex";
+            return openpopup(meal);
+        })
+        recipeclosebtn.addEventListener('click', () => {
+            recipepopup.style.display = "none";
         })
          recipecont.appendChild(recipediv);
         
     
     });
     
+}
+const fetchingredients = (meal) => {
+    let ingredientlists="" ;
+
+    for(let d=1; d<=20; d++){
+        const ingredient = meal[`strIngredient${d}`];
+        console.log(ingredient)
+
+        if (ingredient !== "") {
+            const measure =meal[`strMeasure${d}`];
+            ingredientlists += `<li>${measure} ${ingredient}</li>`;
+        }
+        else{
+            
+            break;
+        }
+    }
+    return ingredientlists;
+}
+const openpopup = (meal) =>{
+       recipedetail.innerHTML = `
+       <h2> ${meal.strMeal}</h2>\n\n
+        <h3>Ingredients:</h3>
+        <ul>${fetchingredients(meal)}</ul>
+        <h3>Instructions:</h3> \n \n ${meal.strInstructions}
+
+       `;
 }
 
 /*const recipedetails = async (query) => {
