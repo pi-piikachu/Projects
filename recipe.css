@@ -10,18 +10,19 @@
     width: 100%;
     height: 60px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-end;
     flex-wrap: nowrap;
 }
+
 .logo{
     height: 60px;
-    width: 230px;
+    width: 270px;
     color:#EFF9F0;
     font-size: 1.4rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: auto;
 }
 a{
     color:#EFF9F0;
@@ -39,6 +40,56 @@ a{
     font-weight: bold;
 }
 
+.sidebar{
+    width: 200px;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: flex start;
+    align-items: center;
+    color:#EFF9F0;
+    font-size: 1.4rem;
+    background-color: #140704;
+    list-style: none;
+    font-weight: bold;
+    padding-top: 20px;
+    position: relative;
+    z-index: 999;
+    backdrop-filter: blur(0px);
+    box-shadow:  -1px 0px 5px #EFF9F0;
+    
+}
+.sidebar li{
+    height: 50px;
+}
+.sidebar a{
+    height: 100%;
+}
+#sidebarbutton{
+    font-size: larger;
+    margin-left: auto;
+    padding-right: 25px;
+}
+#sidebarclosebutton{
+    padding-left: 150px;
+    font-size: larger;
+}
+
+@media (min-width : 750px)  {
+    #sidebarbutton{
+        display: none;
+    }
+    }
+@media (max-width : 750px)  {
+    .mobilex{
+    display: none;
+            }
+        }
+@media (max-width : 400px)  {
+            .sidebar{
+                width: 100vw                               ;
+            }
+}
 /* ..........hero...........*/
 .hero{
     width:100% ;

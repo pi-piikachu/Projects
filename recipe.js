@@ -1,12 +1,26 @@
 const searchinp = document.querySelector('#searchinp');
-
 const searchbtn = document.querySelector('#src-btn');
 const recipecont = document.querySelector(`.recipecontainer`);
 const recipedetail = document.querySelector(`.recipedetail`);
 const recipepopup = document.querySelector(`.recipepopup`);
 const recipeclosebtn = document.querySelector('.recipeclosebtn');
+const sidebaropenbtn = document.querySelector('#sidebarbutton');
+const sidebar = document.querySelector('.sidebar');
+const sidebarclosebtn = document.querySelector('#sidebarclosebutton');
+const navlist = document.querySelector('.nav-list');
 
 
+
+sidebaropenbtn.addEventListener('click',() =>{
+        sidebar.style.display = "flex";
+        navlist.style.display = "none";
+
+})
+sidebarclosebtn.addEventListener('click',() =>{
+    sidebar.style.display = "none";
+    navlist.style.display = "flex";
+
+})
 const fetchrecipe = async (query) => {
     recipecont.innerHTML="";
     let response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`);
