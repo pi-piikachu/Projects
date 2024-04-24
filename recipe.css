@@ -12,6 +12,9 @@
     display: flex;
     justify-content: flex-end;
     flex-wrap: nowrap;
+    position: fixed;
+    left: 0px;
+    
 }
 
 .logo{
@@ -79,12 +82,17 @@ a{
     #sidebarbutton{
         display: none;
     }
-    
+    .navbar{
+        position: fixed;
+    }
     }
 @media (max-width : 750px)  {
     .mobilex{
     display: none;
             }
+            .navbar{
+                position: fixed;
+            }        
                 
         }
 
@@ -92,6 +100,9 @@ a{
 @media (max-width : 400px)  {
             .sidebar{
                 width: 100vw                               ;
+            }
+            .navbar{
+                position: fixed;         
             }
 }
 /* ..........hero...........*/
@@ -102,20 +113,29 @@ a{
     justify-content: center;
     background-image: url(nav.jpg);
     background-size: cover;
+    
     background-repeat: no-repeat;
     background-position: bottom;
     color: #E4DEBD;
 } 
 .herosection{
-    padding-top: 35px;
-    font-size: 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 900;
+    
+    gap: 20px;
+    text-align: center;
 }
 /* search*/
 
 #searchbar{
-    width: 700px;
+    width: 60%;
     height: 40px;
     display: flex;
+    justify-content: center;
     background-color: white;
     border-radius: 30px;
 }
@@ -130,6 +150,7 @@ a{
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
     border: none;
+    background-color: white;
 }
 #searchinp{
     width: 100%;
@@ -157,12 +178,61 @@ a{
     border: 2px solid rgb(255, 187, 0);
 
 }
+/* recipe-section*/
 
+
+.main-loader{
+    width: 100%;
+    height: auto;
+    display: none;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    background-color:#191618 ;
+    color: #F0EDEE;
+    
+}
+.loader{
+    height: 30px;
+    width: 30px;
+    border: 6px solid blue;
+    border-bottom: 6px solid red;
+    border-radius: 50%;
+    animation: h .7s ease-in 4ms infinite normal;
+}
+@keyframes h{
+    from{rotate: 0deg;}
+    to{rotate: 360deg;}
+}
+#abcd{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 2rem;
+}
+#chefbeforesearch{
+    height: 150px;
+    width: 150px;
+    background-image: url(chefbeforesearch.png);
+    background-size: cover;
+}
+.chefaftersearch{
+    height: 100px;
+    width: 100px;
+    background-image: url(chefaftersearch.png);
+    background-size: cover;
+}
+
+.recipemainbox{
+    background-color:#191618;
+    color: #F0EDEE;
+    text-align: center;
+}
 .recipecontainer{
-    display: grid;
+    display: grid; 
     grid-template-columns : repeat(auto-fit,minmax(350px,1fr)) ;
     grid-template-rows: repeat(auto-fit, 1fr); 
-    height: 1200px;
+    height: auto;
     width: 100%;
     row-gap: 40px;
     column-gap: 44px;
@@ -226,9 +296,11 @@ footer{
     display: flex;flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    position: static;
+    bottom: 0px;
 }
 .credits{
-    height: 60px;
+    height: 40px;
     font-weight: bolder;
     font-size: 1.3rem;
     text-align: center;
@@ -294,10 +366,11 @@ footer h1{
 .social h1{
     text-align: left;
 }
+
+/* footer responsive*/
+
 @media (min-width : 750px)  {
-    #sidebarbutton{
-        display: none;
-    }
+    
     .footergrid{
         height: 100%;
         width:85%;
@@ -306,13 +379,13 @@ footer h1{
         grid-template-columns:  45% 30% 15% 15%;
         
        
-    }
+    } 
     .socials{
     
         display: flex;
         flex-direction: column;
         
-        /* padding-right:80%; */
+        padding-right:80%;
     
     }
     }

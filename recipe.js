@@ -8,6 +8,15 @@ const sidebaropenbtn = document.querySelector('#sidebarbutton');
 const sidebar = document.querySelector('.sidebar');
 const sidebarclosebtn = document.querySelector('#sidebarclosebutton');
 const navlist = document.querySelector('.nav-list');
+const srcicon =document.querySelector('.src-iconss');
+const srcemptybtn =document.querySelector('.src-empty-btn');
+const loader =document.querySelector('.main-loader');
+const recipemainbox =document.querySelector('.recipemainbox');
+const recipeinp = searchinp.value.trim();
+const recipeheading =document.querySelector('#abcd');
+
+
+
 
 
 
@@ -23,6 +32,9 @@ sidebarclosebtn.addEventListener('click',() =>{
 })
 const fetchrecipe = async (query) => {
     recipecont.innerHTML="";
+    recipeheading.innerHTML=``;
+    loader.style.display="flex";
+
     let response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`);
   //  console.log(response);
     let data = await response.json();
@@ -31,6 +43,10 @@ const fetchrecipe = async (query) => {
         let recipediv = document.createElement('div');
         recipediv.classList.add('recipe');
         console.log(meal);
+    recipeheading.innerHTML=`<h2>Showing Search Results for ${query}</h2>`;
+    loader.style.display="none";
+        
+
          recipediv.innerHTML = `<img src = "${meal.strMealThumb}">
          <h3>${meal.strMeal}</h3>\n
          <p>${meal.strArea}</p>
@@ -117,7 +133,17 @@ searchbtn.addEventListener('click', (e) => {
     
    return fetchrecipe(recipeinp);
 })
-
+srcicon.addEventListener('click', (e) => {
+    e.preventDefault;
+    const recipeinp = searchinp.value.trim();
+    console.log("hello");
+    
+   return fetchrecipe(recipeinp);
+})
+srcemptybtn.addEventListener('click',(e)=>{
+      e.preventDefault;
+      searchinp.value="";
+})
 
 // api ninja api
 /*const url = `https://www.api.api-ninjas.com/v1/recipe?query=` ;

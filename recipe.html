@@ -18,8 +18,6 @@
                     <li class="mobilex"><a href="ryryr">Contact</a></li>
                     <li class="mobilex"><a href="ryryr">Sign Up</a></li>
                     <li id="sidebarbutton"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
- 
-
                 </div>
                 <div class="sidebar">
                     <li id="sidebarclosebutton"><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
@@ -37,8 +35,10 @@
                 <h1>Welcome to our OG Recipes' corner!!</h1>      
                 <p>Search to increase your cravings</p>
                     <div  id="searchbar" class="x">
-                        <a href="project1.html"><div id="mag"><i class="fa-solid fa-magnifying-glass"></i></div></a>
+                        <button id="mag" class="src-iconss" ><i class="fa-solid fa-magnifying-glass"></i></button>
                         <input type="text" placeholder="Search for Yummyy Recipes" id="searchinp">
+                        <button id="mag" class="src-empty-btn"><i class="fa-solid fa-xmark"></i></button>
+
                         <button type="submit" id="src-btn">search</button>
                     </div>
             </div>
@@ -46,7 +46,21 @@
     </header>
     <main>
         <section>
-            <div class="recipecontainer"></div>
+            <div class="recipemainbox">
+               
+                <div class="main-loader">
+                    <div class="loader"></div>
+                    <h2 >Just a sec bro, Almost there</h2>
+                    <div class="chefaftersearch"></div>
+                </div>
+
+                <div id="abcd">
+                    <div id="chefbeforesearch"></div>
+                    <h2>:Let me cook bro,Hit the Search!</h2>
+                
+                </div>
+                <div class="recipecontainer"></div>
+            </div>
             <div class="recipepopup">
                 <span><button class="recipeclosebtn"><i class="fa-solid fa-xmark"></i></button></span> 
                 <div class="recipedetail"></div>
