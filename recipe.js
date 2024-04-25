@@ -14,6 +14,44 @@ const loader =document.querySelector('.main-loader');
 const recipemainbox =document.querySelector('.recipemainbox');
 const recipeinp = searchinp.value.trim();
 const recipeheading =document.querySelector('#abcd');
+const signinbtn =document.querySelector('#signinbtn');
+const signupbtn =document.querySelector('#signupbtn');
+const namefield =document.querySelector('#namefield');
+const phonefield =document.querySelector('#phonefield');
+const titlesignup =document.querySelector('#title');
+const signinp = document.querySelector('.signinp');
+const signemptybtn =document.querySelector('.sign-empty-btn');
+
+
+
+
+signinbtn.onclick= function(e){
+    e.preventDefault;
+    console.log("hello");
+    namefield.style.display="none";
+    phonefield.style.display="none";
+    titlesignup.innerHTML="Sign In";
+    signupbtn.classList.add("disable");
+    signinbtn.classList.remove("disable");
+    
+}
+signupbtn.onclick= function(e){
+    e.preventDefault;
+    console.log("hello");
+    namefield.style.display="flex";
+    phonefield.style.display="flex";
+    titlesignup.innerHTML="Sign Up";
+    signinbtn.classList.add("disable");
+    signupbtn.classList.remove("disable");
+    
+}
+signemptybtn.addEventListener('click',(e)=>{
+    e.preventDefault;
+    signinp.value="";
+})    
+
+
+
 
 
 

@@ -14,7 +14,7 @@
     flex-wrap: nowrap;
     position: fixed;
     left: 0px;
-    
+    z-index: 999;
 }
 
 .logo{
@@ -266,7 +266,8 @@ a{
 }
 .recipepopup{
     width: 40%;
-    height: auto;
+    max-height: 50%;
+    overflow: scroll;
     display: none;
     position: fixed;
      top: 50%;
@@ -300,7 +301,7 @@ footer{
     bottom: 0px;
 }
 .credits{
-    height: 40px;
+    height: 50px;
     font-weight: bolder;
     font-size: 1.3rem;
     text-align: center;
@@ -429,4 +430,112 @@ footer h1{
     
     }
     
+}
+#signup{
+    width: 100%;
+    height: 100vh;
+    background-image:linear-gradient(rgb(228, 109, 79,.5),rgb(204, 72, 39,.5)), url(signup.jpg);
+    background-size: cover;
+}
+.formbox{
+    background-color: #1C1018;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    
+}
+.formbox h1{
+    font-size: 2rem;
+    padding-top: 10px;
+    margin-bottom: 60px;
+    color: #B2FF9E;
+    position: relative;
+}
+.formbox h1::after{
+    content: '';
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    background-color: #B2FF9E;
+    position: absolute;
+    left: 50%;
+    bottom: -12px;
+    transform: translate(-50%);
+}
+.inputfield{
+    /* width: 70%; */
+    display: flex;
+    justify-content: center;
+    background: white;
+    align-items: center;
+    margin: 15px;
+    padding: 10px;
+    align-items: center;
+    max-height: 65px;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-radius: 10px;
+    max-height: 65px;
+    transition: max-height .5s;
+    overflow: hidden;
+}
+input{
+    width: 95%;                                  
+    outline: 0px;
+    border: 0px;
+    padding: 10px;
+}
+.inputfield i{
+    margin-left: 10px;
+}
+.btn-field{
+    
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15%;
+    margin-top: 29px;
+    margin-bottom: 20%;
+    margin-right:15% ;
+    align-items: flex-start;
+}
+.btn-field button{
+    flex-basis: 43%;
+    height: 40px;
+    background:#B2FF9E ;
+    color: #1C1018;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: background 1s;
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
+.btn-field button.disable{
+    background: #eaeaea;
+    color: #555;
+}
+.formbox p{
+    color: #808080;  
+    font-weight: bolder;
+}
+.sign-empty-btn{
+    padding-left: 5px;
+}
+.mag{
+    width: 40px;
+    height: 40px;
+    color: black;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border: none;
+    background-color: white;
 }
