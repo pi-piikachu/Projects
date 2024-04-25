@@ -627,8 +627,8 @@ input{
     
     }
     .aboutimage{
-        width: 22rem;
-        height:22rem ;
+        width: 18rem;
+        height:18rem ;
         background-image: url(about.png);
         background-size: cover;
         
