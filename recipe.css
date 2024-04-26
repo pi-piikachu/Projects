@@ -77,6 +77,12 @@ a{
     padding-left: 150px;
     font-size: larger;
 }
+.navbar a:hover{
+    color: #B2FF9E;
+}
+.navbar a.active{
+    color: #B2FF9E;
+}
 
 @media (min-width : 750px)  {
     #sidebarbutton{
@@ -568,7 +574,7 @@ input{
     border-radius: 7px;
      position: absolute;
     left: 50%;
-    top: 13%;
+    top: 11.7%;
     transform: translate(-50%,-100%); 
 }
 .aboutimage{
@@ -627,8 +633,8 @@ input{
     
     }
     .aboutimage{
-        width: 18rem;
-        height:18rem ;
+        width: 17rem;
+        height:17rem ;
         background-image: url(about.png);
         background-size: cover;
         
@@ -651,4 +657,249 @@ input{
         position: relative;
         top: 5%;
     }
+}
+#contact{
+    width: 100%;
+    height: 200vh;
+    background-color: #1C1018;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+    position: relative;
+    color:  #82f067;
+
+    
+}
+#contactusheading{
+    margin-top: 3%;
+}
+#contactusheading::after{
+    content: '';
+    background-color:  #82f067;
+    width: 13rem;
+    height: 12px;
+    border-radius: 7px;
+    position: absolute;
+    left: 50%;
+    top: 8%;
+    transform: translate(-50%,-100%); 
+    
+}
+.contact-content{
+    width: 90%;
+    height: 90%;
+    background-color: #1C1018;
+   display: flex;
+    flex-wrap: wrap; 
+   justify-content: space-around;
+    text-align: center;
+    font-size: 1.5rem;
+    position: relative;
+    color: #1C1018;
+    margin-top: 10%;
+    
+}
+.map{
+    display: flex;
+    justify-content:space-around;
+    width: 96%;
+    height: 28rem;
+    
+}
+.map iframe{
+   width: 28rem;
+   height: 100%;
+}
+.contact-address{
+    width: 80%;
+   height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    
+    background: linear-gradient(rgb(145, 255, 150),rgb(255, 255, 255));
+    
+}
+.contactform{
+    background: linear-gradient(rgb(145, 255, 150),rgb(255, 255, 255));
+    width: 58%;
+    height:80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.contactform input{
+    color: #000;
+    border: 2px solid #140704;
+}
+#contactforminside{
+    width: 90%;
+    height: 80%;
+    background: linear-gradient(rgb(145, 255, 150),rgb(255, 255, 255));
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 5px;
+    justify-content: space-around;
+    align-items: flex-start;
+    
+}
+#contactformname{
+    width:40%;
+    height: 1.75rem;
+    border-radius: 1.25rem;
+    color: #140704;
+
+}
+#contactformemail{
+    width: 40%;
+    height: 1.75rem;
+    border-radius: 1.25rem;
+    margin-left: auto;
+    color: #140704;
+}
+.contactformn2element{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+#contactformsubject{
+    width: 100%;
+    height: 1.75rem;
+    border-radius: 1.25rem;
+    color: #140704;
+}
+#contactformmessage{
+    width: 100%;
+    height: 15rem;
+    border-radius: 1.75rem;
+    color: #140704;
+}
+.contactformbtn{
+    width: 40%;
+    height: 3rem;
+    border-radius: 1.25rem;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    background-color: #b7ffa4;
+    color: #1C1018;
+}
+.addresscontactbox{
+    width: 100%;
+    height: 38.5vh;
+    background: linear-gradient(rgb(145, 255, 150),rgb(255, 255, 255));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1rem;
+}
+.emailcontactbox{
+    width: 100%;
+    height: 38.5vh;
+    background: linear-gradient(rgb(145, 255, 150),rgb(255, 255, 255));
+    display: grid;
+    grid-template-rows:repeat(2,1fr) ;
+    margin-top: auto;
+}
+.emailcontactbox i{
+    font-size: 4rem;
+    position: relative;
+    top: 50%;
+    transform:translateY(-10%);
+}
+.emailcontactinside{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+.xyyzzz{
+    background-color: #1C1018;
+    width: 35%;
+    height:80vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
+}
+@media (max-width:730px){
+    #contact{
+        width: 100%;
+        height: 220vh;  
+    }
+    #contactusheading::after{
+        top: 6.5%; 
+        
+    }
+.contact-content{
+    
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+    text-align: center;
+    font-size: 1.5rem;
+    position: relative;
+    color: #1C1018;
+    margin-top: 15%;
+    flex-wrap: nowrap;
+    gap: 20px;
+    
+}
+.map{
+    display: flex;
+    justify-content:space-between;
+    width: 100%;
+    height: 56rem;
+    flex-direction: column;
+    
+}
+.map iframe{
+    width: 100%;
+    height: 50%;
+ }
+ .contact-address{
+     width: 100%;
+    height: 50%;
+ 
+    
+     
+ }
+ .contactform{
+
+    width: 100%;
+    height:60vh;
+    row-gap: 10px;
+
+}
+.xyyzzz{
+    width: 100%;
+    height:40vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+
+}
+.addresscontactbox{
+    width: 100%;
+    height: 50%;
+    
+}
+.emailcontactbox{
+    width: 100%;
+    height: 50%;
+    
+}
 }
