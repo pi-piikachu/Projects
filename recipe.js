@@ -199,7 +199,7 @@ searchbtn.addEventListener('click', (e) => {
 
         recipeheading.style.display="none";
         nullsearch.style.display="flex";
-    }else if(recipeinp=="biriyani" || recipeinp=="biryani"){
+    }else if(recipeinp=="biriyani" || recipeinp=="biryani" || recipeinp=="Biriyani" || recipeinp=="Biryani" ||recipeinp=="BIRIYANI" || recipeinp=="BIRYANI"){
          recipeinp="biryani";
          return fetchrecipe(recipeinp);
     }else {
