@@ -190,7 +190,7 @@ const openpopup = (meal) =>{
     });*/
 searchbtn.addEventListener('click', (e) => {
     e.preventDefault;
-    const recipeinp = searchinp.value.trim();
+    let recipeinp = searchinp.value.trim();
     console.log("hello");
     nullresponse.style.display="none";
 
@@ -199,7 +199,10 @@ searchbtn.addEventListener('click', (e) => {
 
         recipeheading.style.display="none";
         nullsearch.style.display="flex";
-    } else {
+    }else if(recipeinp=="biriyani" || recipeinp=="biryani"){
+         recipeinp="biryani";
+         return fetchrecipe(recipeinp);
+    }else {
         nullsearch.style.display="none";
         recipeheading.style.display="flex";
 

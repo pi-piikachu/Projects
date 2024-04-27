@@ -254,13 +254,13 @@ a{
     }
     #searchinp{
         width: 100%; 
-    font-size: .7rem;  
+    font-size: .85rem;  
 
     }
     #src-btn{
         width: 60px;
         height: 40px;
-    font-size: .7rem;
+    font-size: .85rem;
 
     }
 }
