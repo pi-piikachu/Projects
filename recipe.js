@@ -21,6 +21,10 @@ const phonefield =document.querySelector('#phonefield');
 const titlesignup =document.querySelector('#title');
 const signinp = document.querySelector('.signinp');
 const signemptybtn =document.querySelector('.sign-empty-btn');
+const nullsearch =document.querySelector('#nullsearch');
+const nullresponse =document.querySelector('#nullresponse');
+const  nullresponseheading =document.querySelector('#nullresponse h2');
+
 
 
 
@@ -58,6 +62,18 @@ signemptybtn.addEventListener('click',(e)=>{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 sidebaropenbtn.addEventListener('click',() =>{
         sidebar.style.display = "flex";
         navlist.style.display = "none";
@@ -75,8 +91,17 @@ const fetchrecipe = async (query) => {
 
     let response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`);
   //  console.log(response);
+
     let data = await response.json();
     console.log(data);
+     console.log(data.meals);
+     if (data.meals==null) {
+        console.log("sorry");
+        loader.style.display="none";
+        nullresponse.style.display="flex";
+        nullresponseheading.innerHTML=`<h3>Sorry for the inconvenience <br> I don't have ${query} in my collection <br> I will definitely learn from my other chef friends and add it until next time</h3>`;
+     }
+     else{
     data.meals.forEach(meal => {
         let recipediv = document.createElement('div');
         recipediv.classList.add('recipe');
@@ -109,7 +134,7 @@ const fetchrecipe = async (query) => {
          recipecont.appendChild(recipediv);
         
     
-    });
+    });}
     
 }
 const fetchingredients = (meal) => {
@@ -118,7 +143,6 @@ const fetchingredients = (meal) => {
     for(let d=1; d<=20; d++){
         const ingredient = meal[`strIngredient${d}`];
         console.log(ingredient)
-
         if (ingredient !== "") {
             const measure =meal[`strMeasure${d}`];
             ingredientlists += `<li>${measure} ${ingredient}</li>`;
@@ -168,8 +192,21 @@ searchbtn.addEventListener('click', (e) => {
     e.preventDefault;
     const recipeinp = searchinp.value.trim();
     console.log("hello");
+    nullresponse.style.display="none";
+
+    if (recipeinp=="") {
+        recipecont.innerHTML="";
+
+        recipeheading.style.display="none";
+        nullsearch.style.display="flex";
+    } else {
+        nullsearch.style.display="none";
+        recipeheading.style.display="flex";
+
+        return fetchrecipe(recipeinp);
+    }
+   
     
-   return fetchrecipe(recipeinp);
 })
 srcicon.addEventListener('click', (e) => {
     e.preventDefault;
@@ -211,7 +248,25 @@ const fetchrecipe = async (query) => {
     
 }*/
 
+let sections = document.querySelectorAll('section');
+let navlinks = document.querySelectorAll('nav-list li a');
 
+window.onscroll = ()=>{
+    sections.forEach(sec=>{
+        let top = window.scrollY;
+        let offset = sec.offsetTop;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+
+        if (top>=offset && top<offset+height){
+            navlinks.forEach(links =>{
+                links.classList.remove('active');
+                document.querySelector(`nav-list li a [href*=`+id+`]`).classList.add('active');
+            })
+        };
+    });
+    
+};
 
 
 
