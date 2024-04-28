@@ -21,6 +21,8 @@ const phonefield =document.querySelector('#phonefield');
 const titlesignup =document.querySelector('#title');
 const signinp = document.querySelector('.signinp');
 const signemptybtn =document.querySelector('.sign-empty-btn');
+const registerbtn = document.querySelector('.registerbtn');
+
 const nullsearch =document.querySelector('#nullsearch');
 const nullresponse =document.querySelector('#nullresponse');
 const  nullresponseheading =document.querySelector('#nullresponse h2');
@@ -29,7 +31,7 @@ const  nullresponseheading =document.querySelector('#nullresponse h2');
 
 
 
-signinbtn.onclick= function(e){
+signinbtn.addEventListener('click',(e)=>{
     e.preventDefault;
     console.log("hello");
     namefield.style.display="none";
@@ -37,9 +39,10 @@ signinbtn.onclick= function(e){
     titlesignup.innerHTML="Sign In";
     signupbtn.classList.add("disable");
     signinbtn.classList.remove("disable");
+    registerbtn.innerHTML="Log in";
     
-}
-signupbtn.onclick= function(e){
+})
+signupbtn.addEventListener('click',(e)=>{
     e.preventDefault;
     console.log("hello");
     namefield.style.display="flex";
@@ -47,14 +50,17 @@ signupbtn.onclick= function(e){
     titlesignup.innerHTML="Sign Up";
     signinbtn.classList.add("disable");
     signupbtn.classList.remove("disable");
+    registerbtn.innerHTML="Register";
     
-}
+})
 signemptybtn.addEventListener('click',(e)=>{
     e.preventDefault;
     signinp.value="";
 })    
-
-
+registerbtn.addEventListener('click',(e)=>{
+    e.preventDefault;    
+}
+)
 
 
 
