@@ -252,24 +252,41 @@ const fetchrecipe = async (query) => {
 }*/
 
 let sections = document.querySelectorAll('section');
-let navlinks = document.querySelectorAll('nav-list li a');
+let sec = document.querySelector('#Home');
+let sec2 = document.querySelector('#about');
 
-window.onscroll = ()=>{
+let navlinks = document.querySelectorAll('.nav-list li a');
+
+
+window.addEventListener('scroll',()=>{
+    let top = document.documentElement.scrollHeight;
+    let offset = sec.offsetTop;
+    let height = sec.offsetHeight;
+
+    let offset2 = sec2.offsetTop;
+    let height2 = sec2.offsetHeight;
+
+    console.log(top,offset,height,heightc,offset2,height2);
+});
+
+
+/*window.onscroll = ()=>{
     sections.forEach(sec=>{
         let top = window.scrollY;
         let offset = sec.offsetTop;
         let height = sec.offsetHeight;
         let id = sec.getAttribute('id');
-
+        console.log(top,offset,height,id);
         if (top>=offset && top<offset+height){
             navlinks.forEach(links =>{
                 links.classList.remove('active');
-                document.querySelector(`nav-list li a [href*=`+id+`]`).classList.add('active');
+               let linked= document.querySelector('.nav-list li a [href*=' +id+ ']');
+               console.log(linked);
             })
         };
     });
     
-};
+};*/
 
 
 

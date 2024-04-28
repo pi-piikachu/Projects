@@ -2,15 +2,16 @@
     margin: 0px;
     padding: 0px;
     font-family: sans-serif;
-     /* scroll-behavior: smooth; */
+    scroll-behavior: smooth; 
+    
 }
 body::-webkit-scrollbar{
-    width: 1rem;
+    width: 15px;
     height: 0;
 }
 body::-webkit-scrollbar-thumb{
     background-color: #69B578;
-    border-radius: .5rem;
+    border-radius: 16px;
 }
 body::-webkit-scrollbar-track{
     background-color:#140704;
@@ -173,13 +174,14 @@ a{
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
     border: none;
-    background-color: white;
+    background-color: transparent;
 }
 #searchinp{
     width: 100%;
     border: none;
     font-size: 1rem;  
     outline: none;
+    background-color: transparent;
     
       
 }
@@ -407,6 +409,7 @@ a{
     outline: none;
     color: white;
     transition: all 50ms ease-in-out 20ms;
+    cursor: pointer;
 }
 .recipe button:hover{
     background-color: #c45252;
@@ -501,6 +504,7 @@ a{
     width: 1.7rem; 
     font-size: 1.2rem;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 .recipeclosebtn:hover{
     background-color: #CC2936;
@@ -521,7 +525,7 @@ a{
 
 footer{
     background-color: #556F44;
-    height: auto;
+     height: auto; 
     width: 100%;
     display: flex;flex-direction: column;
     justify-content: space-around;
@@ -530,6 +534,7 @@ footer{
     bottom: 0px;
 }
 .credits{
+    width: 100%;
     height: 50px;
     font-weight: bolder;
     font-size: 1.2rem;
@@ -599,7 +604,7 @@ footer h2{
 
 /* footer responsive*/
 
-@media (min-width : 750px)  {
+@media (min-width:750px)  {
     
     .footergrid{
         height: 100%;
@@ -619,7 +624,7 @@ footer h2{
     
     }
     }
-@media  (min-width :540px) and (max-width : 750px)   {
+@media  (min-width :540px)and (max-width : 750px)   {
     .footergrid{
         height: 100%;
          width:85%;
