@@ -215,6 +215,38 @@ a{
     border: 2.5px solid #FFD500;
 
 }
+.ninjabtnd{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 1rem;
+    font-weight: 600;
+
+}
+.ninjabtn{
+    color:#FFD500;
+    font-weight: 900;
+    position: relative;
+     transform: translate(0%,-1.4px); 
+    font-size: 1rem;
+     outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+.ninjabtn:active{
+    color:rgb(241, 227, 185);
+    text-decoration: underline;
+
+}
+.ninjabtn:hover{
+    
+    color:rgb(241, 227, 185);
+
+}
 @media (min-width:600px)and (max-width:750px){
     #searchbar{
         width: 70%;
@@ -328,6 +360,7 @@ a{
     background: url(chefninjasearch.png);
     background-size: cover;
 }
+
 #nullresponse{
     display: none;
     flex-direction: column;

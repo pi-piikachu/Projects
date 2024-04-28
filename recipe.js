@@ -26,7 +26,13 @@ const registerbtn = document.querySelector('.registerbtn');
 const nullsearch =document.querySelector('#nullsearch');
 const nullresponse =document.querySelector('#nullresponse');
 const  nullresponseheading =document.querySelector('#nullresponse h2');
+
 const ninjasearch =document.querySelector('#ninjasearch');
+const ninjabtn = document.querySelector('.ninjabtn');
+
+
+
+
 
 
 
@@ -224,6 +230,7 @@ const fetchrecipe = async (query) => {
          <p>${meal.strArea}</p>
          <p>${meal.strCategory}</p>`;
 
+        
          const recipebtn = document.createElement('button');
          recipebtn.classList.add('recipebtn');
          recipebtn.innerHTML =`View Recipe`;
@@ -316,13 +323,14 @@ searchbtn.addEventListener('click', (e) => {
 })
 
 
-/*searchbtn.addEventListener('dblclick', (e) => {
+ninjabtn.addEventListener('click', (e) => {
     e.preventDefault;
     let recipeinp = searchinp.value.trim();
     console.log("hello");
     recipecont.innerHTML="";
     nullresponse.style.display="none";
     ninjasearch.style.display="none";
+   
 
     if (recipeinp=="") {
         recipecont.innerHTML="";
@@ -337,7 +345,7 @@ searchbtn.addEventListener('click', (e) => {
     }
    
     
-})*/
+})
 srcicon.addEventListener('click', (e) => {
     e.preventDefault;
     const recipeinp = searchinp.value.trim();
