@@ -251,23 +251,12 @@ const fetchrecipe = async (query) => {
     
 }*/
 
-let sections = document.querySelectorAll('section');
+/*let sections = document.querySelectorAll('section');
 let sec = document.querySelector('#Home');
 let sec2 = document.querySelector('#about');
 
 let navlinks = document.querySelectorAll('.nav-list li a');
 
-
-window.addEventListener('scroll',()=>{
-    let top = document.documentElement.scrollHeight;
-    let offset = sec.offsetTop;
-    let height = sec.offsetHeight;
-
-    let offset2 = sec2.offsetTop;
-    let height2 = sec2.offsetHeight;
-
-    console.log(top,offset,height,heightc,offset2,height2);
-});
 
 
 /*window.onscroll = ()=>{
